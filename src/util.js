@@ -5,11 +5,11 @@ import numeral from "numeral";
 export const casesTypeColor = {
     cases : {
         hex: "#CC1034",
-        multiplier:800,
+        multiplier:700,
     },
     recovered : {
         hex: "#7dd71d",
-        multiplier:1200,
+        multiplier:800,
     },
     deaths : {
         hex: "#fb4443",
@@ -38,7 +38,7 @@ export const showDataOnMap = (data,casesType="cases" ) => {
                 fillOpacity={0.4}
                 color={casesTypeColor[casesType].hex}
                 fillColor={casesTypeColor[casesType].hex}
-                radius = {Math.sqrt(country[casesType])*casesTypeColor[casesType].multiplier}
+                radius = {Math.pow(Math.sqrt(Math.sqrt(country[casesType]))*casesTypeColor[casesType].multiplier,1.25 )}
 
             >
                 <Popup>
